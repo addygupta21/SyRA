@@ -1,4 +1,4 @@
-# SyRaGAN, NeuroComputing 2022
+# SyRaGAN, NeuroComputing 2024
 Pytorch implementation
 >**Update completion**<br>
 
