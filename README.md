@@ -54,9 +54,7 @@ To run the SyRA GAN project locally, please follow these steps:
 
 1. Clone the repository:
    ```bash
-https://github.com/addygupta21/SyRA.git
-
-5 syntheiszed rain images will be created for each clear image in `./expr/result`
+   git clone https://github.com/addygupta21/SyRA.git
 
 ## References
 [1] Yang, Wenhan, et al. "Deep joint rain detection and removal from a single image." Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.
