@@ -1,65 +1,60 @@
-# SyRaGAN, NeuroComputing 2024
-Pytorch implementation
->**Update completion**<br>
+# SyRA GAN: Synthetic Rain Generation using GAN
 
-**SyRa : Synthesized rain image for deraining algorithms** [Paper](https://www.sciencedirect.com/science/article/pii/S0925231222004040)
+## Project Overview
 
-[Jaewoong Choi](https://github.com/jaewoong1),  [Daeha Kim](https://github.com/kdhht2334),  [Sanghyuk Lee](https://github.com/shlee625),  [Byung Cheol Song](https://scholar.google.com/citations?user=yo-cOtMAAAAJ&hl=ko&oi=sra)
+**SyRA GAN** (Synthetic Rain Generation using GAN) is a cutting-edge project aimed at enhancing flight simulators by incorporating synthetic rain effects. By leveraging the power of Generative Adversarial Networks (GANs), SyRA GAN simulates decreased visibility in the environment, providing a more realistic and challenging training experience for pilots.
 
-On this repository, SyRaGAN's code and instructions for synthesizing rain images are explained.
+## Why SyRA GAN?
 
-![figure1](https://user-images.githubusercontent.com/54341727/130918704-2e9eeb97-442b-404e-8393-c439795b2597.png)
+In flight simulation training, replicating adverse weather conditions such as rain is crucial for preparing pilots for real-world scenarios. SyRA GAN achieves this by generating high-quality synthetic rain effects that decrease visibility, making the simulation environment more immersive and realistic.
 
-## Requirements
-Install the dependencies:
-```
-bash
-conda create -n SyRaGAN python=3.6.7
-conda activate SyRaGAN
-conda install -y pytorch=1.4.0 torchvision=0.5.0 cudatoolkit=10.0 -c pytorch
-conda install x264=='1!152.20180717' ffmpeg=4.0.2 -c conda-forge
-pip install opencv-python==4.1.2.30 ffmpeg-python==0.2.0 scikit-image==0.16.2
-pip install pillow==7.0.0 scipy==1.2.1 tqdm==4.43.0 munch==2.5.0
-pip install tqdm
-```
+### Custom Dataset
 
+To train and evaluate SyRA GAN, we utilized two datasets:
 
-## Pretrained model
->**Click to download [pretrained SyRa-GAN](https://drive.google.com/file/d/1TGqwSroSOsS77J2rQVGXfCpT6jcI5fuQ/view?usp=sharing)**<br>
+1. **Flight Simulator Dataset** (Kaggle): A dataset consisting of approximately 12,000 clean images used as the base for generating synthetic rain effects.
 
+2. **IIIT Dataset**: A custom dataset created at IIIT Allahabad, comprising 1,500 paired and sequence images from the CC1 to CC3 building dataset. This dataset includes clean and adverse weather conditions, serving as the foundation for our synthetic rain generation.
 
-## SyRa dataset
->**Click to download [SyRa](https://drive.google.com/drive/folders/1SSLpAKuW6U2gPk6601agOMNeA5Kx5_zf?usp=sharing)**<br> : Trainset - 10K clear image and 50K synthesized rain image , Testset - 1K clear image and 5K synthesized rain image
+### Objective
 
->**Click to download [SyRa-HQ](https://drive.google.com/drive/folders/1PUXDTdf0vGeZaH7sbc9xXCCTWM7ouwZ_?usp=sharing)**<br> : Trainset - 1K clear image and 5K synthesized rain image , Testset - 100 clear image and 500 synthesized rain image
+The primary objective of SyRA GAN is to generate realistic synthetic rain effects to decrease visibility in flight simulators. Additionally, within the IIIT Dataset, the goal was to create rain effects to decrease visibility in the ADAS (Advanced Driver Assistance Systems) framework, thereby providing a more realistic training environment for both pilots and autonomous driving systems.
 
-## Training dataset
-As training data, Rain100L [1], Rain100H [1], Rain800 [2], Rain1200 [3], Rain1400 [4], and SPA-data [5] were used.
-The training image is used by concating each clear image and rain image.
+## Why Use GANs?
 
-## Training SyRaGAN
-Divide your training images into the following locations : `./data/rains/train/A` `./data/rains/train/B`
+GANs are ideally suited for generating realistic synthetic data. The architecture of a GAN consists of two components: the **Generator** and the **Discriminator**. These two networks work in tandem to produce high-quality, realistic rain effects essential for simulating adverse weather conditions in flight simulators.
 
-**Example of training image :**<br>
+### Advantages of Using GANs
 
-![raind4697](https://user-images.githubusercontent.com/54341727/130947400-d35d3fe4-7903-4786-b232-22d6d270946d.jpg)
+- **Realism**: GANs are capable of generating visually convincing synthetic rain effects that closely mimic real-world conditions.
+- **Efficiency**: Unlike traditional methods, GANs do not rely on Markov chains, reducing computation and training time.
+- **Versatility**: GANs can be used for a range of tasks such as object detection, semantic segmentation, and localization, making them highly adaptable for different simulation needs.
 
-**Run**<br>
+## GAN Architecture
 
-```
-python main.py --img_size 256 --mode train --checkpoint_dir expr/checkpopint/SyRa --resume_iter 0 --gpu 0
-```
+*Details of the GAN architecture will be provided here, including the structure of the generator and discriminator networks, the loss functions used, and any other relevant architectural decisions.*
 
-## Synthesizing rain image
-Put clear images in the following location. `./asset/folder_of_your_data`
+## Dataset Overview
 
-Put checkpoint file in the following location. `./expr/checkpoint/SyRa`
+1. **Flight Simulator Dataset**: Sourced from Kaggle, containing 12,000 clean images that serve as the base for rain effect generation.
+   
+2. **IIIT Dataset**: A custom dataset containing 1,500 paired and sequence images of road conditions under clean and adverse weather, collected from the CC1 to CC3 buildings at IIIT Allahabad.
 
-**Run**<br>
+## Key Tasks
 
-```
-python main.py --img_size 256 --mode syn --checkpoint_dir expr/checkpoint/SyRa --out_dir expr/result --data folder_of_your_data --resume_iter 100000
-```
+The main tasks tackled by SyRA GAN include:
+
+- **Object Detection**: Identifying objects within the rain-affected images.
+- **Semantic Segmentation**: Classifying each pixel of an image into different categories.
+- **Localization**: Determining the location of objects within the images.
+
+## Installation
+
+To run the SyRA GAN project locally, please follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/SyRA-GAN.git
 
 5 syntheiszed rain images will be created for each clear image in `./expr/result`
 
