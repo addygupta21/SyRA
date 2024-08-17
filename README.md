@@ -54,7 +54,7 @@ To run the SyRA GAN project locally, please follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/SyRA-GAN.git
+https://github.com/addygupta21/SyRA.git
 
 5 syntheiszed rain images will be created for each clear image in `./expr/result`
 
