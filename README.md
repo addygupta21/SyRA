@@ -1,6 +1,6 @@
 # SyRA GAN: Synthetic Rain Generation using GAN
-
-## Project Overview
+## By Aaditya Gupta-IIT2021242 and Nitesh Kumar Shah-IIB2021002
+### Project Overview
 
 **SyRA GAN** (Synthetic Rain Generation using GAN) is a cutting-edge project aimed at enhancing flight simulators by incorporating synthetic rain effects. By leveraging the power of Generative Adversarial Networks (GANs), SyRA GAN simulates decreased visibility in the environment, providing a more realistic and challenging training experience for pilots.
 
@@ -15,7 +15,11 @@ To train and evaluate SyRA GAN, we utilized two datasets:
 1. **Flight Simulator Dataset** (Kaggle): A dataset consisting of approximately 12,000 clean images used as the base for generating synthetic rain effects.
 
 2. **IIIT Dataset**: A custom dataset created at IIIT Allahabad, comprising 1,500 paired and sequence images from the CC1 to CC3 building dataset. This dataset includes clean and adverse weather conditions, serving as the foundation for our synthetic rain generation.
+### Sequence involved in  Image Generation
+![Clean Image](./Syn_3004.jpg)
 
+### Rain Effected Image
+![Rain Effect Image](./rain_1.jpg)
 ### Objective
 
 The primary objective of SyRA GAN is to generate realistic synthetic rain effects to decrease visibility in flight simulators. Additionally, within the IIIT Dataset, the goal was to create rain effects to decrease visibility in the ADAS (Advanced Driver Assistance Systems) framework, thereby providing a more realistic training environment for both pilots and autonomous driving systems.
