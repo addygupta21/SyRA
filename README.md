@@ -10,7 +10,7 @@ In flight simulation training, replicating adverse weather conditions such as ra
 
 ### Custom Dataset
 
-To train and evaluate SyRA GAN, we utilized two datasets:
+To train and evaluate SyRA GAN, we utilized two datasets::
 
 1. **Flight Simulator Dataset** (Kaggle): A dataset consisting of approximately 12,000 clean images used as the base for generating synthetic rain effects.
 
@@ -26,7 +26,7 @@ The primary objective of SyRA GAN is to generate realistic synthetic rain effect
 
 ## Why Use GANs?
 
-GANs are ideally suited for generating realistic synthetic data. The architecture of a GAN consists of two components: the **Generator** and the **Discriminator**. These two networks work in tandem to produce high-quality, realistic rain effects essential for simulating adverse weather conditions in flight simulators.
+GANs are ideally suited for generating realistic synthetic data. The architecture of a GAN consists of two components: the **Generator** and the **Discriminator**. These two networks work in tandem to produce high-quality, realistic rain effects essential for simulating adverse weather conditions in the flight simulators.
 
 ### Advantages of Using GANs
 
