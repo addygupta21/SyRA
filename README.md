@@ -46,7 +46,7 @@ GANs are ideally suited for generating realistic synthetic data. The architectur
 
 ## Key Tasks
 
-The main tasks tackled by SyRA GAN include:
+The main tasks tackled by SyRA GAN include:->
 
 - **Object Detection**: Identifying objects within the rain-affected images.
 - **Semantic Segmentation**: Classifying each pixel of an image into different categories.
